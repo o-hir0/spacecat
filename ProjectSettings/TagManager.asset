@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Wall
+  - Wind
+  - Enemy
+  - WindItem
+  - FireItem
+  - Goal
+  - DeathZone
+  - FireBall
+  - HeelItem
   layers:
   - Default
   - TransparentFX
@@ -12,10 +21,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Wind
+  - Groumd
+  - Wall
+  - Goal
   - 
   - 
   - 
