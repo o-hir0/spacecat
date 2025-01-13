@@ -1,20 +1,21 @@
+
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class player : MonoBehaviour
 {
     private Rigidbody2D rbody;
+    private bool isGrounded = true;
+    private bool iswind = false;
+    private bool inWindArea = false;
+    private Vector2 velocity;
 
-    public float speedx = 10f;
-    public float jumpforce = 30f;
-
-    private bool isgrounded = true;
-
+    public float moveSpeed = 8.0f;
+    public float jumpForce = 14.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rbody = this.gameObject.GetComponent<Rigidbody2D>();
-
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,52 +23,97 @@ public class Player : MonoBehaviour
     {
         Vector2 velocity = rbody.linearVelocity;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            velocity.x = -speedx;
+            velocity.x = moveSpeed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            velocity.x = speedx;
+            velocity.x = -moveSpeed;
         }
         else
         {
             velocity.x = 0;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isgrounded)
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            velocity.y = jumpforce;
-            isgrounded = false;
+            velocity.y = jumpForce;
+            isGrounded = false;
+        }
+        //if (iswind && Input.GetKeyDown(KeyCode.A))
+        //{    
+        //  wind();
+        //}
+        //風の能力
+        if (iswind)
+        {
+            if (inWindArea)
+            {
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
+                {
+                    velocity.x = moveSpeed + 10;
+                }
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow))
+                {
+                    velocity.x = -moveSpeed + 5;
+                }
+            }
         }
 
 
         rbody.linearVelocity = velocity;
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
-            isgrounded = true;
+            isGrounded = true;
         }
-
-        if (collision.gameObject.tag == "Enemy")
+        //風のアイテムをとった時
+        if (collision.gameObject.tag == "WindItem")
         {
-            HitEnemy(collision.gameObject);
+            iswind = true;
+            Destroy(collision.gameObject);
         }
-
+        //リスポーンについて
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            transform.position = new Vector3(-10.0f, 0.5f, 0.0f);
+        }
     }
 
-    private void HitEnemy(GameObject enemy)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float HalfScaleY = transform.lossyScale.y / 2.0f;
-        float enemyHalfScaleY = enemy.transform.lossyScale.y / 2.0f;
-        if (transform.position.y - (enemyHalfScaleY - 0.1f) >= enemy.transform.position.y + (enemyHalfScaleY - 0.1f))
+        if (collision.gameObject.tag == "Wind")
         {
-            Destroy(enemy);
+            inWindArea = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("Wind"))
+        {
+            inWindArea = false;
+        }
+    }
+
+    /*private void wind()
+    {
+        Debug.Log("アイテムをとりiswindになりました");
+    }*/
 
 }
+
+
+/*private void HitEnemy(GameObject enemy)
+{
+    float HalfScaleY = transform.lossyScale.y / 2.0f;
+    float enemyHalfScaleY = enemy.transform.lossyScale.y / 2.0f;
+    if (transform.position.y - (enemyHalfScaleY - 0.1f) >= enemy.transform.position.y + (enemyHalfScaleY - 0.1f))
+    {
+        Destroy(enemy);
+    }
+}*/
+
+//}
