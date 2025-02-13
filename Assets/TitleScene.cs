@@ -22,7 +22,7 @@ public class TitleScene : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage");
     }
     
 }
