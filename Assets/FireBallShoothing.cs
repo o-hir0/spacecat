@@ -17,8 +17,8 @@ public class FireBallShoothing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 positionRight = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
-        Vector3 positionLeft = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+        Vector3 positionRight = new Vector3(transform.position.x + 3, transform.position.y, transform.position.z);
+        Vector3 positionLeft = new Vector3(transform.position.x - 3, transform.position.y, transform.position.z);
         if (isFire)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
