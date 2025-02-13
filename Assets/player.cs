@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     private bool iswind = false;
     private bool inWindArea = false;
     private Vector2 velocity;
+    private SpriteRenderer spriteRenderer;
 
     public float moveSpeed = 8.0f;
     public float jumpForce = 14.0f;
@@ -16,6 +17,7 @@ public class player : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -26,10 +28,12 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             velocity.x = moveSpeed;
+            spriteRenderer.flipX = false; // ‰EŒü‚«
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             velocity.x = -moveSpeed;
+            spriteRenderer.flipX = true;  // ¶Œü‚«
         }
         else
         {
