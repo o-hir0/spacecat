@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6316986415171755798}
   - component: {fileID: 5977638446883736239}
   - component: {fileID: 1916914777001884927}
+  - component: {fileID: 2114366791177212881}
+  - component: {fileID: 2765483185144220440}
+  - component: {fileID: 2470904700367367096}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -29,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 8317186590119834185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0534, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fef717154b3ac44b9a34f39015d670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedx: 10
-  jumpforce: 15
+  moveSpeed: 8
+  jumpForce: 14
 --- !u!50 &5977638446883736239
 Rigidbody2D:
   serializedVersion: 5
@@ -130,7 +133,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1916914777001884927
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,7 +144,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d290f443ef0ad8a49952d52157c41ec1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -177,3 +180,51 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2114366791177212881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317186590119834185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338ed1e771b4554dba1bd5c96d9577e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 1.5
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  climbSpeed: 5
+  offsetY: -1.4
+--- !u!114 &2765483185144220440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317186590119834185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14603b85e06ea854dadcc7a1ec9c1e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHp: 0
+  MaxHp: 100
+  HPBar: {fileID: 0}
+  hpText: {fileID: 0}
+--- !u!114 &2470904700367367096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317186590119834185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a208fed09f3634f9b12fc5cbfe8949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireBallRight: {fileID: 4330560356223906790, guid: 9dc9143f9314e344783149173fb4f95f, type: 3}
+  FireBallLeft: {fileID: 5955026572251079875, guid: 847c3c156b29c6c4da98a3fd3e06aaac, type: 3}
