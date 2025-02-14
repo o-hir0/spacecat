@@ -92,6 +92,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Wind")
         {
             inWindArea = true;
+            Debug.Log("風のエリアに入りました");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -99,6 +100,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == ("Wind"))
         {
             inWindArea = false;
+            Debug.Log("風のエリアを出ました");
         }
     }
 
