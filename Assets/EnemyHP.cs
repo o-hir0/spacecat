@@ -26,7 +26,7 @@ public class EnemyHP : MonoBehaviour
         hpText.text = HP.ToString() + "/" + MaxHp.ToString();
         if (HP <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);   
         }
     }
 
@@ -37,4 +37,5 @@ public class EnemyHP : MonoBehaviour
             HP = HP - 10;
         }
     }
+    
 }
