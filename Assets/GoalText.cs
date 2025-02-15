@@ -46,6 +46,6 @@ public class GoalText : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("GameClearScene");
+        SceneManager.LoadScene("BossScene");
     }
 }
