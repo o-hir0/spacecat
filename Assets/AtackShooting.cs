@@ -15,12 +15,14 @@ public class AtackShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 positionLeft = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+        Vector3 positionLeft = new Vector3(transform.position.x - 8, transform.position.y, transform.position.z);
+        Vector3 positionLeftUp = new Vector3(transform.position.x - 8, transform.position.y+5, transform.position.z);
+        Vector3 positionLeftDown = new Vector3(transform.position.x - 8, transform.position.y-5, transform.position.z);
         if (shooting)
         {
-            Instantiate(AtackLeft);
-            Instantiate(AtackLeftUp);
-            Instantiate(AtackLeftDown);
+            Instantiate(AtackLeft, positionLeft, Quaternion.identity);
+            Instantiate(AtackLeftUp, positionLeftUp, Quaternion.identity);
+            Instantiate(AtackLeftDown, positionLeftDown, Quaternion.identity);
             shooting = false;
             Invoke("ShootingOn",5.0f);
         }

@@ -2031,26 +2031,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1395102911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8620309499428792096, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
-  m_PrefabInstance: {fileID: 6980073927318022168}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1395102916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395102911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b453caf0d3a8f4794a79ccd5feea75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AtackLeft: {fileID: 476544031730128328, guid: 242a859a40916a54bb78184ff47ae375, type: 3}
-  AtackLeftUp: {fileID: 4580627100895496338, guid: 5f34c3fd79ae02647a230d4d194a6745, type: 3}
-  AtackLeftDown: {fileID: 2134940924102383062, guid: aa0c3f7becb47f0429cd22dca5a40f29, type: 3}
 --- !u!1 &1486706060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,11 +2648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318485182993812480, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.4386
+      value: 64.3
       objectReference: {fileID: 0}
     - target: {fileID: 3318485182993812480, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8813
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 3318485182993812480, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2729,10 +2709,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8620309499428792096, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1395102916}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10611272cb0ec304399898e3e86c7fb6, type: 3}
 --- !u!1001 &7708631251453147645
 PrefabInstance:

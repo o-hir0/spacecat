@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1174154732491110392}
   - component: {fileID: 6295709158013525125}
   - component: {fileID: 3757280192370149467}
+  - component: {fileID: 5012782997534359826}
   m_Layer: 0
   m_Name: Atack3
   m_TagString: Atack
@@ -152,3 +153,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5012782997534359826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134940924102383062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2b6cd586aa4d7499cbb8948d2f53b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
