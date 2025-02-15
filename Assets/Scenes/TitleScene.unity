@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeText: {fileID: 1040281249}
   fullscreenText: {fileID: 1698265047}
+  closeText: {fileID: 1061890802}
   volumeSlider: {fileID: 1410519231}
   fullscreenToggle: {fileID: 1716064818}
 --- !u!1 &610897939
@@ -1793,9 +1794,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 467652618}
         m_TargetAssemblyTypeName: AudioSetting, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: 
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
