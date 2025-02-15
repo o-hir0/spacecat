@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2114366791177212881}
   - component: {fileID: 2765483185144220440}
   - component: {fileID: 2470904700367367096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0534, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 0.428763, y: 0.39074418, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02056408, y: -0.067694426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -178,7 +178,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.418432, y: 10.793268}
   m_EdgeRadius: 0
 --- !u!114 &2114366791177212881
 MonoBehaviour:
@@ -192,12 +192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a338ed1e771b4554dba1bd5c96d9577e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 1.5
+  rayDistance: 2.5
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
   climbSpeed: 5
-  offsetY: -1.4
+  offsetY: -1.85
 --- !u!114 &2765483185144220440
 MonoBehaviour:
   m_ObjectHideFlags: 0
