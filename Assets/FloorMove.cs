@@ -6,7 +6,8 @@ public class FloorMove : MonoBehaviour
     private bool up = true;
     private float reading = 1.0f;
     private Vector3 position;
-
+    public float MoveY = 1.5f;
+    public float speed = 3.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,19 +24,19 @@ public class FloorMove : MonoBehaviour
             reading++;
         }
 
-        if ((transform.position.y <= (position.y + 1.5f)) && up == true)
+        if ((transform.position.y <= (position.y + MoveY)) && up == true)
         {
-            transform.Translate(0, 3 * Time.deltaTime, 0);
+            transform.Translate(0, speed * Time.deltaTime, 0);
         }
-        else if (transform.position.y > (position.y + 1.5f))
+        else if (transform.position.y > (position.y + MoveY))
         {
             up = false;
         }
-        if ((transform.position.y >= (position.y - 1.5f)) && up == false)
+        if ((transform.position.y >= (position.y - MoveY)) && up == false)
         {
-            transform.Translate(0, -3 * Time.deltaTime, 0);
+            transform.Translate(0, -speed * Time.deltaTime, 0);
         }
-        else if (transform.position.y < (position.y - 1.5f))
+        else if (transform.position.y < (position.y - MoveY))
         {
             up = true;
         }

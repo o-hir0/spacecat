@@ -3,6 +3,8 @@ using UnityEngine;
 public class Atack2Move : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public float speedX = -2.0f;
+    public float speedY = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +14,7 @@ public class Atack2Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(-2.0f, 1.0f);
+        rb.linearVelocity = new Vector2(speedX, speedY);
         Invoke("destroy", 3.0f);
     }
     private void OnCollisionEnter2D(Collision2D collision)
