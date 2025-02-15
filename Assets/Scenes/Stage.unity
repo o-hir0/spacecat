@@ -1983,10 +1983,6 @@ PrefabInstance:
       propertyPath: rayDistance
       value: 2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2114366791177212881, guid: d4aa0634e3d680449a9a885619c51510, type: 3}
-      propertyPath: wallLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 2765483185144220440, guid: d4aa0634e3d680449a9a885619c51510, type: 3}
       propertyPath: HPBar
       value: 
