@@ -4,15 +4,19 @@ using TMPro;
 
 public class Setting : MonoBehaviour
 {
-    private int selectedOption = 0; // 0: 音量, 1: フルスクリーン
+    private int selectedOption = 0; // 0: 音量, 1: フルスクリーン, 2: Close
     private float volume = 0.5f;
     private bool isFullscreen = false;
+
+    private TitleScene titleScene;
+
 
     private const string VolumeKey = "MasterVolume";
     private const string FullscreenKey = "Fullscreen";
 
     public TextMeshProUGUI volumeText;
     public TextMeshProUGUI fullscreenText;
+    public TextMeshProUGUI closeText;
     public Slider volumeSlider;
     public Toggle fullscreenToggle;
 
@@ -34,6 +38,8 @@ public class Setting : MonoBehaviour
         volumeSlider.value = volume;
         fullscreenToggle.isOn = isFullscreen;
 
+        titleScene = GameObject.Find("GameObject").GetComponent<TitleScene>();
+
         UpdateUI();
     }
 
@@ -41,7 +47,7 @@ public class Setting : MonoBehaviour
     {
         // 上下キーで項目を選択
         if (Input.GetKeyDown(KeyCode.UpArrow)) selectedOption = Mathf.Max(0, selectedOption - 1);
-        if (Input.GetKeyDown(KeyCode.DownArrow)) selectedOption = Mathf.Min(1, selectedOption + 1);
+        if (Input.GetKeyDown(KeyCode.DownArrow)) selectedOption = Mathf.Min(2, selectedOption + 1);
 
 
         // 左右キーで値を変更（長押し対応）
@@ -74,6 +80,13 @@ public class Setting : MonoBehaviour
                 fullscreenToggle.isOn = isFullscreen;
             }
         }
+        else if (selectedOption == 2)
+        {
+            if (Input.GetKeyDown(KeyCode.Return)) 
+            {
+                titleScene.CloseSettings();
+            }
+        }
 
         PlayerPrefs.Save();
         UpdateUI();
@@ -87,5 +100,6 @@ public class Setting : MonoBehaviour
         // 選択中の項目を強調表示
         volumeText.color = (selectedOption == 0) ? Color.yellow : Color.white;
         fullscreenText.color = (selectedOption == 1) ? Color.yellow : Color.white;
+        closeText.color = (selectedOption == 2) ? Color.yellow : Color.black;
     }
 }
