@@ -38,6 +38,10 @@ public class PlayerHP : MonoBehaviour
         {
             CurrentHp -= 10;
         }
+        if (collision.gameObject.tag == "Atack")
+        {
+            CurrentHp -= 10;
+        }
         if (CurrentHp <= 0)
         {
             Invoke("gameOver", 1.0f);
