@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MoveStage : MonoBehaviour
+public class MoveStory : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +26,7 @@ public class MoveStage : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("Stage");
+        SceneManager.LoadScene("Story");
     }
 
 }

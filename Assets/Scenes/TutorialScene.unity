@@ -653,7 +653,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895209748399128488, guid: 123ef17fc8e8d4540ba3d6459f5cc741, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129
+      value: 135.9
       objectReference: {fileID: 0}
     - target: {fileID: 1895209748399128488, guid: 123ef17fc8e8d4540ba3d6459f5cc741, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1776,7 +1776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.67512, y: -26.36}
+  m_AnchoredPosition: {x: 93.281, y: -26.36}
   m_SizeDelta: {x: 20.8821, y: 4.6814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899367370
@@ -3434,10 +3434,9 @@ GameObject:
   - component: {fileID: 1896501816}
   - component: {fileID: 1896501815}
   - component: {fileID: 1896501818}
-  - component: {fileID: 1896501819}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3570,33 +3569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e95471242ce624c8a352b28a751c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1896501819
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896501814}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &1928313218
 PrefabInstance:
   m_ObjectHideFlags: 0
