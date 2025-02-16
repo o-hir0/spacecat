@@ -10,6 +10,8 @@ public class Setting : MonoBehaviour
 
     private TitleScene titleScene;
 
+    public GameObject Panel; //初期パネル
+
     private const string VolumeKey = "MasterVolume";
     private const string FullscreenKey = "Fullscreen";
 
@@ -39,14 +41,14 @@ public class Setting : MonoBehaviour
         volumeSlider.value = volume;
         fullscreenToggle.isOn = isFullscreen;
 
-        titleScene = GameObject.Find("GameObject").GetComponent<TitleScene>();
+        titleScene = this.GetComponent<TitleScene>();
 
         UpdateUI();
     }
 
     void Update()
     {
-        if (!settingsPanel.activeSelf) return; // メニューが開いていない時は操作しない
+        if (!settingsPanel.activeInHierarchy) return; // メニューが開いていない時は操作しない
 
         // 上下キーで項目を選択
         if (Input.GetKeyDown(KeyCode.UpArrow)) selectedOption = Mathf.Max(0, selectedOption - 1);
@@ -88,7 +90,10 @@ public class Setting : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return)) 
             {
-                titleScene.CloseSettings();
+                settingsPanel.SetActive(false);
+                Panel.SetActive(true);
+                titleScene.enabled = true;
+                Debug.Log("SettingEnter");
             }
         }
 
