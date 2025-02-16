@@ -40,11 +40,15 @@ public class PlayerHP : MonoBehaviour
         }
         if (collision.gameObject.tag == "Atack")
         {
-            CurrentHp -= 10;
+            CurrentHp -= 20;
+        }
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            CurrentHp -= 20;
         }
         if (CurrentHp <= 0)
         {
-            Invoke("gameOver", 1.0f);
+            Invoke("gameOver", 0.5f);
         }
     }
     private void gameOver()
