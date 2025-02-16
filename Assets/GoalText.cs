@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; // TextMeshPro用の名前空間を追加
 public class GoalText : MonoBehaviour
 {
     public TMP_Text messageText; // TextMeshPro用のテキストフィールド
-    public string message = "GOAL!"; // 表示するメッセージ内容
+    public string message = "BOSS"; // 表示するメッセージ内容
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
