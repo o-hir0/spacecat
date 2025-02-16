@@ -40,7 +40,7 @@ public class PlayerHP : MonoBehaviour
         }
         if (collision.gameObject.tag == "Atack")
         {
-            CurrentHp -= 10;
+            CurrentHp -= 20;
         }
         if (collision.gameObject.tag == "DeathZone")
         {

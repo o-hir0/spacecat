@@ -26,7 +26,9 @@ public class EnemyHP : MonoBehaviour
         hpText.text = HP.ToString() + "/" + MaxHp.ToString();
         if (HP <= 0)
         {
-            Destroy(gameObject);   
+            Destroy(gameObject);
+            hpText.text = null;
+            HPBar.gameObject.SetActive(false);
         }
     }
 
