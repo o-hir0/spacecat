@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NASA9-1024x917_0: 2210967990838809557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
