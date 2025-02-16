@@ -10,9 +10,10 @@ public class Setting : MonoBehaviour
 
     private TitleScene titleScene;
 
-
     private const string VolumeKey = "MasterVolume";
     private const string FullscreenKey = "Fullscreen";
+
+    public GameObject settingsPanel;
 
     public TextMeshProUGUI volumeText;
     public TextMeshProUGUI fullscreenText;
@@ -45,6 +46,8 @@ public class Setting : MonoBehaviour
 
     void Update()
     {
+        if (!settingsPanel.activeSelf) return; // メニューが開いていない時は操作しない
+
         // 上下キーで項目を選択
         if (Input.GetKeyDown(KeyCode.UpArrow)) selectedOption = Mathf.Max(0, selectedOption - 1);
         if (Input.GetKeyDown(KeyCode.DownArrow)) selectedOption = Mathf.Min(2, selectedOption + 1);
@@ -69,6 +72,7 @@ public class Setting : MonoBehaviour
 
             AudioListener.volume = volume;
             PlayerPrefs.SetFloat(VolumeKey, volume);
+            volumeSlider.value = volume;
         }
         else if (selectedOption == 1) // フルスクリーン切り替え
         {
@@ -101,5 +105,11 @@ public class Setting : MonoBehaviour
         volumeText.color = (selectedOption == 0) ? Color.yellow : Color.white;
         fullscreenText.color = (selectedOption == 1) ? Color.yellow : Color.white;
         closeText.color = (selectedOption == 2) ? Color.yellow : Color.black;
+    }
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.Save();
     }
 }
