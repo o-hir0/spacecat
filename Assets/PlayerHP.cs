@@ -42,9 +42,13 @@ public class PlayerHP : MonoBehaviour
         {
             CurrentHp -= 10;
         }
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            CurrentHp -= 20;
+        }
         if (CurrentHp <= 0)
         {
-            Invoke("gameOver", 1.0f);
+            Invoke("gameOver", 0.5f);
         }
     }
     private void gameOver()
