@@ -11,7 +11,9 @@ public class TitleScene : MonoBehaviour
 
     public GameObject settingsPanel; // 設定画面パネル
 
-    public GameObject Panel;
+    public GameObject CreditsPanel; //クレジットパネル
+
+    public GameObject Panel; //初期パネル
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class TitleScene : MonoBehaviour
 
     void Update()
     {
+        if(!Panel.activeSelf){return;}
+
         // 上矢印キーで選択移動
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -51,6 +55,8 @@ public class TitleScene : MonoBehaviour
 
     void SelectOption()
     {
+        if(!Panel.activeSelf){return;}
+        
         switch (currentIndex)
         {
             case 0:
@@ -60,7 +66,7 @@ public class TitleScene : MonoBehaviour
                 OpenSettings(); // 設定を開く
                 break;
             case 2:
-                Debug.Log("クレジット（未実装）");
+                OpenCredits();
                 break;
         }
     }
@@ -74,6 +80,18 @@ public class TitleScene : MonoBehaviour
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
+        Panel.SetActive(true);
+    }
+
+    public void OpenCredits()
+    {
+        CreditsPanel.SetActive(true);
+        Panel.SetActive(false);
+    }
+
+    public void CloseCredits()
+    {
+        CreditsPanel.SetActive(false);
         Panel.SetActive(true);
     }
 }
