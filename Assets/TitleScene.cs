@@ -61,7 +61,7 @@ public class TitleScene : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                SceneManager.LoadScene("Stage"); // ゲーム開始
+                SceneManager.LoadScene("TutorialScene"); // チュートリアル開始
                 break;
             case 1:
                 OpenSettings(); // 設定を開く
