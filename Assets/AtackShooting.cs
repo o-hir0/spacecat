@@ -24,7 +24,7 @@ public class AtackShooting : MonoBehaviour
             Instantiate(AtackLeftUp, positionLeftUp, Quaternion.identity);
             Instantiate(AtackLeftDown, positionLeftDown, Quaternion.identity);
             shooting = false;
-            Invoke("ShootingOn",5.0f);
+            Invoke("ShootingOn",2.0f);
         }
     }
     
